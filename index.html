@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        function userPlay() { //prompt user to choose
+            const userChoice = prompt("Do you choose rock, paper or scissors?").toLowerCase();
+            return userChoice;
+            
+        }
+        function computerPlay() { //computer generates a random answer.
+            let random = ["rock", "paper", "scissors"];
+            return random[Math.floor(Math.random() * 3)];
+
+        }
+        function playRound(playerSelection, computerSelection) { //plays a round of the game.
+            if (playerSelection === "rock") {
+                if (computerSelection === "rock") {
+                    return "Draw!";
+                } else if (computerSelection === "paper") {
+                    return "Computer wins!";
+                } else {
+                    return "User wins!";
+                }
+            } else if (playerSelection === "paper") {
+                if (computerSelection === "rock") {
+                    return "User wins!";
+                } else if (computerSelection === "paper") {
+                    return "Draw!";
+                } else {
+                    return "Computer wins!";
+                }
+            } else {
+                if (computerSelection === "rock") {
+                    return "Computer wins!";
+                } else if (computerSelection === "paper") {
+                    return "User wins!";
+                } else {
+                    return "Draw!";
+                }
+            }
+        }
+        
+        const userChoice = userPlay()
+        const computerSelection = computerPlay();
+        const result = playRound(userChoice, computerSelection)
+        console.log("user's choice is:", userChoice);
+        console.log("computer's choice is:", computerSelection);
+        console.log("Result is is:", result);
+       
+
+
+
+
+
+    </script>
+</body>
+</html>
