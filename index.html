@@ -4,61 +4,39 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-    <script>
-        
-        function userPlay() { //prompt user to choose
-            const userChoice = prompt("Do you choose rock, paper or scissors?").toLowerCase();
-            return userChoice;
-            
-        }
-        function computerPlay() { //computer generates a random answer.
-            let random = ["rock", "paper", "scissors"];
-            return random[Math.floor(Math.random() * 3)];
+ <body>
+    <header>
+        <h1>Rock Paper Scissors</h1>        
+    </header>
 
-        }
-        function playRound(playerSelection, computerSelection) { //plays a round of the game.
-            if (playerSelection === "rock") {
-                if (computerSelection === "rock") {
-                    return "Draw!";
-                } else if (computerSelection === "paper") {
-                    return "Computer wins!";
-                } else {
-                    return "User wins!";
-                }
-            } else if (playerSelection === "paper") {
-                if (computerSelection === "rock") {
-                    return "User wins!";
-                } else if (computerSelection === "paper") {
-                    return "Draw!";
-                } else {
-                    return "Computer wins!";
-                }
-            } else {
-                if (computerSelection === "rock") {
-                    return "Computer wins!";
-                } else if (computerSelection === "paper") {
-                    return "User wins!";
-                } else {
-                    return "Draw!";
-                }
-            }
-        }
-        
-        const userChoice = userPlay()
-        const computerSelection = computerPlay();
-        const result = playRound(userChoice, computerSelection)
-        console.log("user's choice is:", userChoice);
-        console.log("computer's choice is:", computerSelection);
-        console.log("Result is is:", result);
-       
+    <div class="score-board">
+        <div class="user">
+            <div id="user-label" class="badge">user</div>
+            <div id="computer-label" class="badge">comp</div>
+            <span id="user-score">0</span>:<span id="computer-score">0</span>
+        </div>
+    </div>
 
+    <div class="result">
+        <p>Paper covers rock, you win!</p>
+    </div>
 
+    <div class="choices">
+        <div class="choice" id="r">
+            <img src="img/rock.png" alt="">
+        </div>
+        <div class="choice" id="p">
+            <img src="img/paper.jpg" alt="">
+        </div>
+        <div class="choice" id="s">
+            <img src="img/scissors.png" alt="">
+        </div>
+    </div>
 
-
-
-    </script>
-</body>
+    <p id="action-message">Make your move</p>
+    <script src="app.js"></script>
+ </body>
 </html>
